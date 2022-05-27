@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechBerry - Dashboard</title>
-    <link rel="icon" href="../imgs/logo1.png">
+    <title>Harry Potter - Ranking</title>
+    <link rel="icon" href="../imgs/logoHP.png">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="home_dashboard.css">
     <script src="../js/funcoes.js"></script>
@@ -15,17 +15,18 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </head>
 
 <body onload="validarSessao()">
 
     <div class="janela">
         <div class="esquerda">
-            <h1>TechBerry</h1>
+            <h1>Harry Potter</h1>
 
             <a href="home_dashboard.html">
                 <div class="esquerdaImg">
-                    <img src="../imgs/logo1.png" alt="">
+                    <img src="../imgs/logoHP.png" alt="">
                 </div>
             </a>
 
@@ -41,23 +42,11 @@
 
 
                 <span class="lista">
-                    <details>
-
-                        <summary class="btn-nav">
-                            <img class="icon-nav" src="../imgs/plant-pot.png" alt="">
-                            <span>Estufas</span>
-                        </summary>
-                        <span class="lista-itens">
-                            <a href="estufa1.html">
-                                <img class="icon-lista" src="../imgs/plant-pot-red.png" alt="">
-                                <span>Estufa 1</span>
-                            </a>
-                            <a href="estufa2.html">
-                                <img class="icon-lista" src="../imgs/plant-pot-red.png" alt="">
-                                <span>Estufa 2</span>
-                            </a>
-                        </span>
-                    </details>
+                    <a href="estufa1.html" class="btn-nav">
+                        <span class="iconify" data-icon="ic:baseline-quiz" style="color: white; margin-right: 12px;"
+                            data-width="24" data-height="24"></span>
+                        <span>Quiz</span>
+                    </a>
                 </span>
 
 
@@ -73,189 +62,48 @@
 
             <div class="teste">
                 <div class="nome_metrica">
-                    Métricas
-                    <h5>Temperatura (°C) | Umidade (%)</h5>
+                    Ranking
+                    <h5>Pontuação gerada por participantes das casas.</h5>
                 </div>
 
                 <div class="regua">
                     <div class="item-regua">
-                        <h3 class="perigo-frio">Perigo</h3>
-                        <h5>12.2°C</h5>
-                        <h5>20%</h5>
+                        <h3 class="grif_cor">Grifinória</h3>
+                        <h5>X PONTOS</h5>
+                        <h5></h5>
                     </div>
                     <div class="item-regua ">
-                        <h3 class="alerta-frio">Alerta</h3>
-                        <h5>17.7°C</h5>
-                        <h5>37%</h5>
+                        <h3 class="son_cor">Sonserina</h3>
+                        <h5>X PONTOS</h5>
+                        <h5></h5>
                     </div>
                     <div class="item-regua">
-                        <h3 class="ideal">Ideal</h3>
-                        <h5>17.8ºC - 21.9°C</h5>
-                        <h5>37.1% - 64.4%</h5>
+                        <h3 class="luf_cor">Lufa-Lufa</h3>
+                        <h5>X PONTOS</h5>
+                        <h5></h5>
                     </div>
                     <div class="item-regua">
-                        <h3 class="alerta-quente">Alerta</h3>
-                        <h5>22°C</h5>
-                        <h5>64.5%</h5>
-                    </div>
-                    <div class="item-regua">
-                        <h3 class="perigo-quente">Perigo</h3>
-                        <h5>26.7°C</h5>
-                        <h5>76%</h5>
+                        <h3 class="cor_cor">Corvinal</h3>
+                        <h5>X PONTOS</h5>
+                        <h5></h5>
                     </div>
                 </div>
             </div>
 
+
             <div class="principais">
                 <div class="principal1">
-                    <span class="nome_estufa">Estufa 1</span>
-
+                    <span class="nome_estufa">Rankeamento Gráfico</span>
                     <div class="informacoes_tudo">
-                        <div class="informacoes info1">
-                            <div class="box1">
-                                <span class="titulo">Temperatura Atual</span>
-                                <div class="parte1_temp">
-                                    <span>Status:</span>
-                                    <div class="status ideal"></div> <span>Ideal</span>
-                                </div>
-                                <div class="parte2_temp">
-                                    <div id="divPai1">
-                                        <canvas id="chart_tempReal"></canvas>
-                                    </div>
-                                    <span id="spT1" class="valor_tempReal"></span>
-                                </div>
-
-                            </div>
-                            <div class="box1">
-                                <span class="titulo">Umidade Atual</span>
-                                <div class="parte1_umid">
-                                    <span>Status:</span>
-                                    <div class="status alerta-quente"></div> <span>Alerta</span>
-                                </div>
-                                <div class="parte2_umid">
-                                    <div id="divPai2">
-                                        <canvas id="chart_umidReal"></canvas>
-                                    </div>
-                                    <span id="spU1" class="valor_umidReal"></span>
-                                </div>
-                            </div>
-                            <div class="box2">
-                                <div class="kpi">
-                                    <span class="titulo">Quantidade Sensores</span>
-                                    <span>(Ativos)</span>
-                                    <span class="valor_kpi">4</span>
-                                    <div class="valor_alerta vazio"></div>
-                                </div>
-                                <div class="kpi">
-                                    <span class="titulo">Anormalidades</span>
-                                    <span>(Últimas 24h)</span>
-                                    <span class="valor_kpi">5</span>
-                                    <ul class="msg">
-                                        <li>
-                                            <div class="msg_estado alerta-quente"></div>
-                                            Sensor 3: Temperatura 22°C (14:00)
-                                        </li>
-                                        <li>
-                                            <div class="msg_estado alerta-quente"></div>
-                                            Sensor 3: Temperatura 24°C (14:30)
-                                        </li>
-                                        <li>
-                                            <div class="msg_estado alerta-quente"></div>
-                                            Sensor 4: Umidade 68% (14:30)
-                                        </li>
-                                        <li>
-                                            <div class="msg_estado alerta-quente"></div>
-                                            Sensor 4: Umidade 73% (15:00)
-                                        </li>
-                                        <li>
-                                            <div class="msg_estado perigo-quente"></div>
-                                            Sensor 4: Umidade 78% (15:30)
-                                        </li>
-                                    </ul>
-                                    <div class="valor_alerta alerta-quente"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="informacoes info1"></div>
                     </div>
                 </div>
             </div>
-            <div class="principais">
-                <div class="principal1">
-                    <span class="nome_estufa">Estufa 2</span>
-
-                    <div class="informacoes info1">
-                        <div class="box1">
-                            <span class="titulo">Temperatura Atual</span>
-                            <div class="parte1_temp">
-                                <span>Status:</span>
-                                <div class="status ideal"></div> <span>Ideal</span>
-                            </div>
-                            <div class="parte2_temp">
-                                <canvas id="chart_tempReal2"></canvas>
-                                <span id="spT2" class="valor_tempReal"></span>
-                            </div>
-
-                        </div>
-                        <div class="box1">
-                            <span class="titulo">Umidade Atual</span>
-                            <div class="parte1_umid">
-                                <span>Status:</span>
-                                <div class="status alerta-quente"></div> <span>Alerta</span>
-                            </div>
-                            <div class="parte2_umid">
-                                <canvas id="chart_umidReal2"></canvas>
-                                <span id="spU2" class="valor_umidReal"></span>
-                            </div>
-                        </div>
-                        <div class="box2">
-                            <div class="kpi">
-                                <span class="titulo">Quantidade Sensores</span>
-                                <span>(Ativos)</span>
-                                <span class="valor_kpi">4</span>
-                                <div class="valor_alerta vazio"></div>
-                            </div>
-                            <div class="kpi">
-                                <span class="titulo">Anormalidades</span>
-                                <span>(Últimas 24h)</span>
-                                <span class="valor_kpi">5</span>
-                                <ul class="msg">
-                                    <li>
-                                        <div class="msg_estado alerta-quente"></div>
-                                        Sensor 3: Temperatura 22°C (14:00)
-                                    </li>
-                                    <li>
-                                        <div class="msg_estado alerta-quente"></div>
-                                        Sensor 3: Temperatura 24°C (14:30)
-                                    </li>
-                                    <li>
-                                        <div class="msg_estado alerta-quente"></div>
-                                        Sensor 4: Umidade 68% (14:30)
-                                    </li>
-                                    <li>
-                                        <div class="msg_estado alerta-quente"></div>
-                                        Sensor 4: Umidade 73% (15:00)
-                                    </li>
-                                    <li>
-                                        <div class="msg_estado perigo-quente"></div>
-                                        Sensor 4: Umidade 78% (15:30)
-                                    </li>
-                                </ul>
-                                <div class="valor_alerta alerta-quente"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
         </div>
     </div>
-
 </body>
 
 <script>
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     var idEstufa = 0;
     var idSensor = 0;
     var idMedida = 0;
@@ -279,54 +127,55 @@
             })
         }
     })
-function buscarSensor() {
-    
-    fetch("/medidas/pegarSensores", {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            idEstufa: idEstufa
-        })
-    }).then(function (resposta) {
-        if (resposta.ok) {
-            resposta.json().then(json => {
-                console.log(json[0].idSensor);
-                idSensor = json[0].idSensor;
-                setInterval(() => {
-                    buscarMedida();       
-                }, 5000);
-            })
-        }
-    })
-}
-function buscarMedida() {
-    
-    fetch("/medidas/pegarMedida", {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            idSensor: idSensor
-        })
-    }).then(function (resposta) {
-        if (resposta.ok) {
-            resposta.json().then(json => {
-                console.log(json[0].idMedida);
-                idMedida = json[0].idMedida;
-                console.log(json[0].temperaturaRegistrada);
-                tempEst1 = json[0].temperaturaRegistrada;
-                console.log(json[0].umidadeRegistrada);
-                umidEst1 = json[0].umidadeRegistrada;
 
-            })
-        }
-    })
-}
+    function buscarSensor() {
 
-    // }, 5000);
+        fetch("/medidas/pegarSensores", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idEstufa: idEstufa
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    console.log(json[0].idSensor);
+                    idSensor = json[0].idSensor;
+                    setInterval(() => {
+                        buscarMedida();
+                    }, 5000);
+                })
+            }
+        })
+    }
+
+    function buscarMedida() {
+
+        fetch("/medidas/pegarMedida", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idSensor: idSensor
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    console.log(json[0].idMedida);
+                    idMedida = json[0].idMedida;
+                    console.log(json[0].temperaturaRegistrada);
+                    tempEst1 = json[0].temperaturaRegistrada;
+                    console.log(json[0].umidadeRegistrada);
+                    umidEst1 = json[0].umidadeRegistrada;
+
+                })
+            }
+        })
+    }
+
 
 
     var data_tempReal = {
@@ -442,30 +291,6 @@ function buscarMedida() {
         config_umidReal2
     );
 
-
-
-
-    // GRÁFICO TEMPERATURA (ESTUFA 2) - TEMPERATURA EM TEMPO REAL
-
-
-
-    // function atualizacaoPeriodica() {
-    //     obterdados(1);
-    //     obterdados(2);
-    //     obterdados(3);
-    //     obterdados(4);
-
-    //     function sendData() {
-    // 		var http = new XMLHttpRequest();
-    // 		http.open('POST', 'http://localhost:3000/api/sendData', false);
-    // 		http.send(null);
-    // 	}
-
-    //     setInterval(() => {
-    // 		sendData();
-    // 	}, 2000);
-    //     setTimeout(atualizacaoPeriodica, 5000);
-    // }
 
     function obterdados(idAquario) {
         fetch(`/medidas/tempo-real/${idAquario}`)
