@@ -8,7 +8,9 @@ body {
 .direita {
     background-color: white;
     width: 95%;
-    margin: 25px 25px 25px 25px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
     border-radius: 25px;
 }
 
