@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter - Ranking</title>
+    <link rel="icon" href="../imgs/logoHP.png">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="home_dashboard.css">
+    <script src="../js/funcoes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+</head>
+
+<body onload="validarSessao()">
+
+    <div class="janela">
+        <div class="esquerda">
+            <h1>Harry Potter</h1>
+
+            <a href="home_pontos.html">
+                <div class="esquerdaImg">
+                    <img src="../imgs/logoHP.png" alt="">
+                </div>
+            </a>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">user</span>!</h3>
+            </div>
+
+            <div class="btn_todos">
+                <a class="btn-nav" href="home_pontos.html">
+                    <img class="icon-nav" src="../imgs/home-icon.png" alt="">
+                    <span class="selected">Home</span>
+                </a>
+
+
+                <span class="lista">
+                    <a href="quiz.html" class="btn-nav">
+                        <span class="iconify" data-icon="ic:baseline-quiz" style="color: white; margin-right: 12px;"
+                            data-width="24" data-height="24"></span>
+                        <span>Quiz</span>
+                    </a>
+                </span>
+
+
+                <div class="btn-logout" onclick="limparSessao()">
+                    <img class="icon-nav" src="../imgs/exit-icon.png" alt="">
+                    <span>Sair</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="direita">
+
+            <div class="teste">
+                <div class="nome_metrica">
+                    Ranking
+                    <h5>Pontuação gerada por participantes das casas.</h5>
+                </div>
+
+                <div class="regua">
+                    <div class="item-regua">
+                        <h3 class="grif_cor">Grifinória</h3>
+                        <h5 id="pon_gri">X PONTOS</h5>
+                        <h5></h5>
+                    </div>
+                    <div class="item-regua ">
+                        <h3 class="son_cor">Sonserina</h3>
+                        <h5 id="pon_son">X PONTOS</h5>
+                        <h5></h5>
+                    </div>
+                    <div class="item-regua">
+                        <h3 class="luf_cor">Lufa-Lufa</h3>
+                        <h5 id="pon_luf">X PONTOS</h5>
+                        <h5></h5>
+                    </div>
+                    <div class="item-regua">
+                        <h3 class="cor_cor">Corvinal</h3>
+                        <h5 id="pon_cor">X PONTOS</h5>
+                        <h5></h5>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="principais">
+                <div class="principal1">
+                    <span class="nome_estufa">Rankeamento Gráfico</span>
+                    <div class="informacoes_tudo">
+                        <div class="informacoes info1">
+                            <canvas id="rank_casas" style="position: relative; height:40vh; width:40vw"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var pGri = 0;
+    var pSon = 0;
+    var pLuf = 0;
+    var pCor = 0;
+
+    fetch("/medidas/pegarPontos", {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            resposta.json().then(json => {
+                console.log(json[0].Pontos);
+                pGri = json[0].Pontos;
+                pSon = json[1].Pontos;
+                pLuf = json[2].Pontos;
+                pCor = json[3].Pontos;
+                pon_luf.innerHTML = pLuf + " Pontos";
+                pon_gri.innerHTML = pGri + " Pontos";
+                pon_son.innerHTML = pSon + " Pontos";
+                pon_cor.innerHTML = pCor + " Pontos";
+                gerarGrafico();
+            })
+        }
+    })
+
+    function gerarGrafico() {
+        const labels = [
+            "Pontos",
+        ];
+
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                    label: 'Grifinória',
+                    backgroundColor: 'rgb(174, 0, 1)',
+                    data: [pGri],
+                },
+                {
+                    label: 'Sonserina',
+                    backgroundColor: 'rgb(42, 98, 61)',
+                    data: [pSon],
+                },
+                {
+                    label: 'Lufa-Lufa',
+                    backgroundColor: 'rgb(236, 185, 57)',
+                    data: [pLuf],
+                },
+                {
+                    label: 'Corvinal',
+                    backgroundColor: 'rgb(3, 62, 140)',
+                    data: [pCor],
+                }
+            ]
+
+        };
+
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {}
+        };
+
+        const myChart = new Chart(
+            document.getElementById('rank_casas'),
+            config
+        );
+    }
+</script>
+
+</html>

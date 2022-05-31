@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Potter - Ranking</title>
+  <link rel="icon" href="../imgs/logoHP.png">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="home_dashboard.css">
+  <script src="../js/funcoes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+</head>
+
+<body onload="validarSessao()">
+
+  <div class="janela">
+    <div class="esquerda">
+
+
+      <a id="juntazap" class="junta" href="home_pontos.html">
+        <img class="img_esquerda" src="../imgs/logoHP.png" alt="">
+        <h1>Harry Potter</h1>
+      </a>
+
+
+
+      <div class="hello">
+        <h3>Olá, <span id="b_usuario">user</span>!</h3>
+      </div>
+
+      <div class="btn_todos">
+        <a class="btn-nav" href="home_pontos.html">
+          <img class="icon-nav" src="../imgs/home-icon.png" alt="">
+          <span class="selected">Home</span>
+        </a>
+
+        <a href="quiz.html" class="btn-nav">
+          <span class="iconify" data-icon="ic:baseline-quiz" style="color: white; margin-right: 12px;" data-width="24"
+            data-height="24"></span>
+          <span>Quiz</span>
+        </a>
+
+
+        <div class="btn-logout" onclick="limparSessao()">
+          <img class="icon-nav" src="../imgs/exit-icon.png" alt="">
+          <span>Sair</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="direita">
+      <div class="principais">
+        <div class="principal1">
+          <span class="nome_estufa">Quiz</span>
+          <div class="informacoes_tudo">
+            <h1> Regras de jogo: </h1>
+            <div class="regras">
+
+
+
+              <div class="esquerdola">
+                Responda as questões com o tempo que precisar. <br><br>
+                São 15 perguntas relacionadas aos FILMES de Harry Potter. <br><br>
+
+              </div>
+
+              <div class="direitola">
+                Ao final do quiz será mostrada sua pontuação; e; Posteriormente <br>
+                ela será adicionada a sua casa de Hogwarts.
+              </div>
+
+            </div>
+
+            <div id="inicio" class="btn-quiz" onclick="btn_quiz()">
+              Clique aqui para inciar o quiz.
+            </div>
+
+            <div id="pergunta01" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Qual nome completo do professor Dumbledore?</span>
+
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(certo1, 1500);" type="button"
+                  value="Alvo Percival Wulfrico Brian Dumbledore">
+                <input class="opt_quiz" onclick="setTimeout(errado1, 1500);" type="button"
+                  value="Alvo Percival Brian Dumbledore">
+                <input class="opt_quiz" onclick="setTimeout(errado1, 1500);" type="button" value="Alvo Dumbledore">
+                <input class="opt_quiz" onclick="setTimeout(errado1, 1500);" type="button"
+                  value="Alvo Percival Dumbledore">
+              </div>
+
+            </div>
+
+            <div id="pergunta02" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Quando foi lançado o filme Harry Potter e a Pedra Filosofal?</span>
+
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(errado2, 1500);" type="button" value="1999">
+                <input class="opt_quiz" onclick="setTimeout(certo2, 1500);" type="button" value="2001">
+                <input class="opt_quiz" onclick="setTimeout(errado2, 1500);" type="button" value="2003">
+                <input class="opt_quiz" onclick="setTimeout(errado2, 1500);" type="button" value="2000">
+              </div>
+
+            </div>
+
+            <div id="pergunta03" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Qual o nome do mapa criado por Remo Lupin, Pedro Pettigrew, Sirius Black e Tiago
+                Potter?</span>
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(errado3, 1500);" type="button" value="Mapa dos Alunos">
+                <input class="opt_quiz" onclick="setTimeout(errado3, 1500);" type="button" value="Mapa de Hogwarts">
+                <input class="opt_quiz" onclick="setTimeout(errado3, 1500);" type="button" value="Mapa do Colégio">
+                <input class="opt_quiz" onclick="setTimeout(certo3, 1500);" type="button" value="Mapa do Maroto">
+              </div>
+
+            </div>
+
+            <div id="pergunta04" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Quem colocou o nome de Harry Potter no Cálice de Fogo?</span>
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(errado4, 1500);" type="button" value="Severo Snape">
+                <input class="opt_quiz" onclick="setTimeout(certo4, 1500);" type="button" value="Bartô Crouch Jr">
+                <input class="opt_quiz" onclick="setTimeout(errado4, 1500);" type="button" value="Alvo Dumbledore">
+                <input class="opt_quiz" onclick="setTimeout(errado4, 1500);" type="button" value="Vítor Krum">
+              </div>
+            </div>
+
+            <div id="pergunta05" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Quais são as relíquias da morte?</span>
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(errado5, 1500);" type="button" value="Capa da Invisibilidade, Nimbus 2000 
+                e Pedra da Ressureição">
+                <input class="opt_quiz" onclick="setTimeout(errado5, 1500);" type="button"
+                  value="Nimbus 3000 e Pedra Filosofal">
+                <input class="opt_quiz" onclick="setTimeout(certo5, 1500);" type="button"
+                  value="Capa da Invisibilidade, Varinha das varinhas e Pedra da Ressureição">
+                <input class="opt_quiz" onclick="setTimeout(errado5, 1500);" type="button"
+                  value="Taça Tribruxo, Pomo de Ouro e Varinha das varinhas">
+              </div>
+            </div>
+
+            <div id="pergunta06" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Quanto Galeões ganha o vencedor do Torneio Tribuxo?</span>
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(errado6, 1500);" type="button" value="1200">
+                <input class="opt_quiz" onclick="setTimeout(errado6, 1500);" type="button" value="1500">
+                <input class="opt_quiz" onclick="setTimeout(certo6, 1500);" type="button" value="1000">
+                <input class="opt_quiz" onclick="setTimeout(errado6, 1500);" type="button" value="900">
+              </div>
+            </div>
+
+            <div id="pergunta07" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Qual nome do artefato que a professora Minerva deu a Herminone no filme
+                Prisioneiro de Azkaban?</span>
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(errado7, 1500);" type="button" value="Avança-Tempo">
+                <input class="opt_quiz" onclick="setTimeout(errado7, 1500);" type="button" value="Para-Tempo">
+                <input class="opt_quiz" onclick="setTimeout(certo7, 1500);" type="button" value="Vira-Tempo">
+                <input class="opt_quiz" onclick="setTimeout(errado7, 1500);" type="button" value="Volta-Tempo">
+              </div>
+            </div>
+
+            <div id="pergunta08" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Quem é o "Príncipe Mestiço"?</span>
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(errado8, 1500);" type="button" value="Tom Riddle">
+                <input class="opt_quiz" onclick="setTimeout(errado8, 1500);" type="button" value="Draco Malfoy">
+                <input class="opt_quiz" onclick="setTimeout(errado8, 1500);" type="button" value="Rúbeo Hagrid">
+                <input class="opt_quiz" onclick="setTimeout(certo8, 1500);" type="button" value="Severo Snape">
+              </div>
+            </div>
+
+            <div id="pergunta09" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Qual o nome da coruja do Harry?</span>
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(certo9, 1500);" type="button" value="Edwiges">
+                <input class="opt_quiz" onclick="setTimeout(errado9, 1500);" type="button" value="Eduardo">
+                <input class="opt_quiz" onclick="setTimeout(errado9, 1500);" type="button" value="Dobby">
+                <input class="opt_quiz" onclick="setTimeout(errado9, 1500);" type="button" value="Edward">
+              </div>
+            </div>
+
+
+            <div id="pergunta10" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Qual o patrono de Luna Lovegood?</span>
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(errado10, 1500);" type="button" value="Coelho">
+                <input class="opt_quiz" onclick="setTimeout(certo10, 1500);" type="button" value="Lebre">
+                <input class="opt_quiz" onclick="setTimeout(errado10, 1500);" type="button" value="Hamster">
+                <input class="opt_quiz" onclick="setTimeout(errado10, 1500);" type="button" value="Veado">
+              </div>
+            </div>
+
+            <div id="pergunta11" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Qual o nome da serpente de Voldemort?</span>
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(errado11, 1500);" type="button" value="Batilda">
+                <input class="opt_quiz" onclick="setTimeout(errado11, 1500);" type="button" value="Najila">
+                <input class="opt_quiz" onclick="setTimeout(errado11, 1500);" type="button" value="Naja">
+                <input class="opt_quiz" onclick="setTimeout(certo11, 1500);" type="button" value="Nagini">
+              </div>
+            </div>
+
+            <div id="pergunta12" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Qual o nome da escola de magia francesa?</span>
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(errado12, 1500);" type="button" value="Durmstrang">
+                <input class="opt_quiz" onclick="setTimeout(certo12, 1500);" type="button" value="Beauxbatons">
+                <input class="opt_quiz" onclick="setTimeout(errado12, 1500);" type="button" value="Hogwarts">
+                <input class="opt_quiz" onclick="setTimeout(errado12, 1500);" type="button" value="Castelo Bruxo">
+              </div>
+            </div>
+
+            <div id="pergunta13" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Qual nome completo do Voldemort?</span>
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(certo13, 1500);" type="button" value="Tom Marvolo Riddle">
+                <input class="opt_quiz" onclick="setTimeout(errado13, 1500);" type="button" value="Tom Riddle">
+                <input class="opt_quiz" onclick="setTimeout(errado13, 1500);" type="button" value="Tom Marvolo">
+                <input class="opt_quiz" onclick="setTimeout(errado13, 1500);" type="button"
+                  value="Tom Marvolo Voldemort">
+              </div>
+            </div>
+
+            <div id="pergunta14" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Em qual animal a professora Minerva se transfigurava?</span>
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(errado14, 1500);" type="button" value="Cachorro">
+                <input class="opt_quiz" onclick="setTimeout(errado14, 1500);" type="button" value="Fênix">
+                <input class="opt_quiz" onclick="setTimeout(errado14, 1500);" type="button" value="Coelho">
+                <input class="opt_quiz" onclick="setTimeout(certo14, 1500);" type="button" value="Gato">
+              </div>
+            </div>
+
+            <div id="pergunta15" style="display: none;" class="perguntas_quiz">
+              <span class="perg_quiz">Qual o patrono de Harry Potter?</span>
+              <div class="meio">
+                <input class="opt_quiz" onclick="setTimeout(errado15, 1500);" type="button" value="Lobo">
+                <input class="opt_quiz" onclick="setTimeout(errado15, 1500);" type="button" value="Alce">
+                <input class="opt_quiz" onclick="setTimeout(certo15, 1500);" type="button" value="Cervo">
+                <input class="opt_quiz" onclick="setTimeout(errado15, 1500);" type="button" value="Rato">
+              </div>
+            </div>
+
+            <div id="resultados1" style="display: none;" class="resultados1"></div>
+            <div class="resultados2">
+              <div id="resultados2" style="display: none;" class="resultados"></div>
+              <div id="resultados3" style="display: none;" class="resultados"></div>
+            </div>
+            <a id="final" class="btn-encerrar " href="home_pontos.html" style="display: none" onclick="inserirPontos()">
+              Encerraz quiz.
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+<script>
+  var idUsuario = sessionStorage.ID_USUARIO;
+
+  var certas = 0;
+  var erradas = 0;
+
+  function btn_quiz() {
+    pergunta01.style.display = "block";
+    inicio.style.display = "none";
+  }
+
+  //Questão1
+
+  function certo1() {
+    certas++;
+
+    pergunta01.style.display = 'none';
+    pergunta02.style.display = 'block';
+
+  }
+
+  function errado1() {
+    erradas++;
+
+    pergunta01.style.display = 'none';
+    pergunta02.style.display = 'block';
+  }
+
+  // Questão2
+
+  function certo2() {
+    certas++;
+
+    pergunta02.style.display = 'none';
+    pergunta03.style.display = 'block';
+  }
+
+
+  function errado2() {
+    erradas++;
+
+    pergunta02.style.display = 'none';
+    pergunta03.style.display = 'block';
+  }
+
+  // Questão3
+
+  function certo3() {
+    certas++;
+
+    pergunta03.style.display = 'none';
+    pergunta04.style.display = 'block';
+  }
+
+
+  function errado3() {
+    erradas++;
+
+    pergunta03.style.display = 'none';
+    pergunta04.style.display = 'block';
+  }
+
+  // Questão4
+
+  function certo4() {
+    certas++;
+
+    pergunta04.style.display = 'none';
+    pergunta05.style.display = 'block';
+
+  }
+
+  function errado4() {
+    erradas++;
+
+    pergunta04.style.display = 'none';
+    pergunta05.style.display = 'block';
+  }
+
+  // Questão5
+
+  function certo5() {
+    certas++;
+
+    pergunta05.style.display = 'none';
+    pergunta06.style.display = 'block';
+
+  }
+
+  function errado5() {
+    erradas++;
+
+    pergunta05.style.display = 'none';
+    pergunta06.style.display = 'block';
+  }
+
+  // Questão6
+
+  function certo6() {
+    certas++;
+
+    pergunta06.style.display = 'none';
+    pergunta07.style.display = 'block';
+
+  }
+
+  function errado6() {
+    erradas++;
+
+    pergunta06.style.display = 'none';
+    pergunta07.style.display = 'block';
+  }
+
+  // Questão7
+
+  function certo7() {
+    certas++;
+
+    pergunta07.style.display = 'none';
+    pergunta08.style.display = 'block';
+
+  }
+
+  function errado7() {
+    erradas++;
+
+    pergunta07.style.display = 'none';
+    pergunta08.style.display = 'block';
+  }
+
+  // Questão8
+
+  function certo8() {
+    certas++;
+
+    pergunta08.style.display = 'none';
+    pergunta09.style.display = 'block';
+
+  }
+
+  function errado8() {
+    erradas++;
+
+    pergunta08.style.display = 'none';
+    pergunta09.style.display = 'block';
+  }
+
+  // Questão9
+
+  function certo9() {
+    certas++;
+
+    pergunta09.style.display = 'none';
+    pergunta10.style.display = 'block';
+
+  }
+
+  function errado9() {
+    erradas++;
+
+    pergunta09.style.display = 'none';
+    pergunta10.style.display = 'block';
+  }
+
+  // Questão10
+
+  function certo10() {
+    certas++;
+
+    pergunta10.style.display = 'none';
+    pergunta11.style.display = 'block';
+
+  }
+
+  function errado10() {
+    erradas++;
+
+    pergunta10.style.display = 'none';
+    pergunta11.style.display = 'block';
+  }
+
+  // Questão11
+
+  function certo11() {
+    certas++;
+
+    pergunta11.style.display = 'none';
+    pergunta12.style.display = 'block';
+
+  }
+
+  function errado11() {
+    erradas++;
+
+    pergunta11.style.display = 'none';
+    pergunta12.style.display = 'block';
+  }
+
+  // Questão12
+
+  function certo12() {
+    certas++;
+
+    pergunta12.style.display = 'none';
+    pergunta13.style.display = 'block';
+
+  }
+
+  function errado12() {
+    erradas++;
+
+    pergunta12.style.display = 'none';
+    pergunta13.style.display = 'block';
+  }
+
+  // Questão13
+
+  function certo13() {
+    certas++;
+
+    pergunta13.style.display = 'none';
+    pergunta14.style.display = 'block';
+
+  }
+
+  function errado13() {
+    erradas++;
+
+    pergunta13.style.display = 'none';
+    pergunta14.style.display = 'block';
+  }
+
+  // Questão14
+
+  function certo14() {
+    certas++;
+
+    pergunta14.style.display = 'none';
+    pergunta15.style.display = 'block';
+
+  }
+
+  function errado14() {
+    erradas++;
+
+    pergunta14.style.display = 'none';
+    pergunta15.style.display = 'block';
+  }
+
+  // Questão15
+
+  function certo15() {
+    certas++;
+
+    var media = (certas / 15) * 100;
+
+    pergunta15.style.display = 'none';
+    resultados1.style.display = 'block';
+    resultados2.style.display = 'block';
+    resultados3.style.display = 'block';
+    final.style.display = 'block';
+
+    if (certas == 0) {
+      resultados1.innerHTML = 'Nenhuma!? Vamos pesquisar mais.'
+    } else if (certas >= 1 && certas <= 5) {
+      resultados1.innerHTML = 'É um começo, pesquise mais.'
+    } else if (certas >= 6 && certas <= 10) {
+      resultados1.innerHTML = 'Sabe bem né?'
+    } else if (certas >= 11 && certas <= 14) {
+      resultados1.innerHTML = 'Muito bom!'
+    } else {
+      resultados1.innerHTML = 'Você é um PotterHead!'
+    }
+
+    resultados2.innerHTML = `Questões corretas: ${certas} <br> <br> <br>
+                             Questões erradas: ${erradas} <br>`
+
+    resultados3.innerHTML = `Porcentagem de acertos: ${media.toFixed(2)}<br> <br> <br>
+                             Pontos ganhos para sua casa: ${certas * 10}<br>`
+  }
+
+  function errado15() {
+    erradas++;
+
+    var media = (certas / 15) * 100;
+    var pontozap = (certas * 10);
+
+    pergunta15.style.display = 'none';
+    resultados1.style.display = 'block';
+    resultados2.style.display = 'block';
+    resultados3.style.display = 'block';
+    final.style.display = 'block';
+
+    if (certas == 0) {
+      resultados1.innerHTML = 'Nenhuma!? Vamos pesquisar mais.'
+    } else if (certas >= 1 && certas <= 5) {
+      resultados1.innerHTML = 'É um começo, pesquise mais.'
+    } else if (certas >= 6 && certas <= 10) {
+      resultados1.innerHTML = 'Sabe bem né?'
+    } else if (certas >= 11 && certas <= 14) {
+      resultados1.innerHTML = 'Muito bom!'
+    } else {
+      resultados1.innerHTML = 'Você é um PotterHead!'
+    }
+
+    resultados2.innerHTML = `Questões corretas: ${certas} <br> <br> <br>
+                             Questões erradas: ${erradas} <br>`
+
+    resultados3.innerHTML = `Porcentagem de acertos: ${media.toFixed(2)}<br> <br> <br>
+                             Pontos ganhos para sua casa: ${pontozap}<br>`
+  }
+
+  function inserirPontos() {
+    var pontozap = (certas * 10);
+    fetch("/medidas/inserirPontozap", {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        pontozap: pontozap,
+        idUsuario: idUsuario
+      })
+    }).then(function (resposta) {
+      if (resposta.ok) {
+        resposta.json().then(json => {
+          console.log(json[0].Pontos);
+        })
+      }
+    })
+  }
+</script>
+
+</html>
