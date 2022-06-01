@@ -19,7 +19,6 @@ function pegarPontosController(req, res) {
 function inserirPontozapController(req, res) {
     var pontozap = req.body.pontozap;
     var idusuario = req.body.idUsuario;
-    console.log('aaaa')
     medidaModel.inserirPontozapModel(pontozap, idusuario).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
