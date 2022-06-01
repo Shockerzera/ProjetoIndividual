@@ -61,8 +61,8 @@
         <div class="principal1">
           <span class="nome_estufa">Quiz</span>
           <div class="informacoes_tudo">
-            <h1> Regras de jogo: </h1>
-            <div class="regras">
+            <h1 id="h1_regras"> Regras de jogo: </h1>
+            <div id="regrolas" class="regras">
 
 
 
@@ -139,8 +139,8 @@
                 e Pedra da Ressureição">
                 <input class="opt_quiz" onclick="setTimeout(errado5, 1500);" type="button"
                   value="Nimbus 3000 e Pedra Filosofal">
-                <input class="opt_quiz" onclick="setTimeout(certo5, 1500);" type="button"
-                  value="Capa da Invisibilidade, Varinha das varinhas e Pedra da Ressureição">
+                <input class="opt_quiz" onclick="setTimeout(certo5, 1500);" type="button" value="Capa da Invisibilidade, Varinha das varinhas e
+                   Pedra da Ressureição">
                 <input class="opt_quiz" onclick="setTimeout(errado5, 1500);" type="button"
                   value="Taça Tribruxo, Pomo de Ouro e Varinha das varinhas">
               </div>
@@ -271,8 +271,11 @@
   var erradas = 0;
 
   function btn_quiz() {
+    regrolas.style.display = "none";
+    h1_regras.style.display = "none";
     pergunta01.style.display = "block";
     inicio.style.display = "none";
+
   }
 
   //Questão1
