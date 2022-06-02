@@ -213,7 +213,7 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
-        var casaVar = escolha
+        var casaVar = escolha;
 
         mensagem_erro.innerHTML = '';
         erroEmail.innerHTML = '';
@@ -264,7 +264,6 @@
                         window.location.href = "login.html";
                     }
                 });
-                limparFormulario();
 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");

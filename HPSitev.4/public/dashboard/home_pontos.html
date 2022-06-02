@@ -117,7 +117,6 @@
     }).then(function (resposta) {
         if (resposta.ok) {
             resposta.json().then(json => {
-                console.log(json[0].Pontos);
                 pGri = json[0].Pontos;
                 pSon = json[1].Pontos;
                 pLuf = json[2].Pontos;
