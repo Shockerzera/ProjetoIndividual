@@ -59,7 +59,7 @@
     <div class="direita">
       <div class="principais">
         <div class="principal1">
-          <span class="nome_estufa">Quiz</span>
+          <span class="nome_quiz">Quiz</span>
           <div class="informacoes_tudo">
             <h1 id="h1_regras"> Regras do quiz: </h1>
             <div id="regrolas" class="regras">
@@ -89,12 +89,12 @@
               <span class="perg_quiz">Qual nome completo do professor Dumbledore?</span>
 
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(certo1, 1500);" type="button"
+                <input class="opt_quiz1" onclick="certo1();" type="button"
                   value="Alvo Percival Wulfrico Brian Dumbledore">
-                <input class="opt_quiz" onclick="setTimeout(errado1, 1500);" type="button"
+                <input class="opt_quiz2" onclick="errado1();" type="button"
                   value="Alvo Percival Brian Dumbledore">
-                <input class="opt_quiz" onclick="setTimeout(errado1, 1500);" type="button" value="Alvo Dumbledore">
-                <input class="opt_quiz" onclick="setTimeout(errado1, 1500);" type="button"
+                <input class="opt_quiz3" onclick="errado1();" type="button" value="Alvo Dumbledore">
+                <input class="opt_quiz4" onclick="errado1();" type="button"
                   value="Alvo Percival Dumbledore">
               </div>
 
@@ -104,10 +104,10 @@
               <span class="perg_quiz">Quando foi lançado o filme Harry Potter e a Pedra Filosofal?</span>
 
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(errado2, 1500);" type="button" value="1999">
-                <input class="opt_quiz" onclick="setTimeout(certo2, 1500);" type="button" value="2001">
-                <input class="opt_quiz" onclick="setTimeout(errado2, 1500);" type="button" value="2003">
-                <input class="opt_quiz" onclick="setTimeout(errado2, 1500);" type="button" value="2000">
+                <input class="opt_quiz1" onclick="errado2();" type="button" value="1999">
+                <input class="opt_quiz2" onclick="certo2()" type="button" value="2001">
+                <input class="opt_quiz3" onclick="errado2();" type="button" value="2003">
+                <input class="opt_quiz4" onclick="errado2();" type="button" value="2000">
               </div>
 
             </div>
@@ -116,10 +116,10 @@
               <span class="perg_quiz">Qual o nome do mapa criado por Remo Lupin, Pedro Pettigrew, Sirius Black e Tiago
                 Potter?</span>
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(errado3, 1500);" type="button" value="Mapa dos Alunos">
-                <input class="opt_quiz" onclick="setTimeout(errado3, 1500);" type="button" value="Mapa de Hogwarts">
-                <input class="opt_quiz" onclick="setTimeout(errado3, 1500);" type="button" value="Mapa do Colégio">
-                <input class="opt_quiz" onclick="setTimeout(certo3, 1500);" type="button" value="Mapa do Maroto">
+                <input class="opt_quiz1" onclick="errado3();" type="button" value="Mapa dos Alunos">
+                <input class="opt_quiz2" onclick="errado3();" type="button" value="Mapa de Hogwarts">
+                <input class="opt_quiz3" onclick="errado3();" type="button" value="Mapa do Colégio">
+                <input class="opt_quiz4" onclick="certo3();" type="button" value="Mapa do Maroto">
               </div>
 
             </div>
@@ -127,23 +127,23 @@
             <div id="pergunta04" style="display: none;" class="perguntas_quiz">
               <span class="perg_quiz">Quem colocou o nome de Harry Potter no Cálice de Fogo?</span>
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(errado4, 1500);" type="button" value="Severo Snape">
-                <input class="opt_quiz" onclick="setTimeout(certo4, 1500);" type="button" value="Bartô Crouch Jr">
-                <input class="opt_quiz" onclick="setTimeout(errado4, 1500);" type="button" value="Alvo Dumbledore">
-                <input class="opt_quiz" onclick="setTimeout(errado4, 1500);" type="button" value="Vítor Krum">
+                <input class="opt_quiz1" onclick="errado4();" type="button" value="Severo Snape">
+                <input class="opt_quiz2" onclick="certo4();" type="button" value="Bartô Crouch Jr">
+                <input class="opt_quiz3" onclick="errado4();" type="button" value="Alvo Dumbledore">
+                <input class="opt_quiz4" onclick="errado4();" type="button" value="Vítor Krum">
               </div>
             </div>
 
             <div id="pergunta05" style="display: none;" class="perguntas_quiz">
               <span class="perg_quiz">Quais são as relíquias da morte?</span>
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(errado5, 1500);" type="button" value="Capa da Invisibilidade, Nimbus 2000 
+                <input class="opt_quiz1" onclick="errado5();" type="button" value="Capa da Invisibilidade, Nimbus 2000 
                 e Pedra da Ressureição">
-                <input class="opt_quiz" onclick="setTimeout(errado5, 1500);" type="button"
+                <input class="opt_quiz2" onclick="errado5();" type="button"
                   value="Nimbus 3000 e Pedra Filosofal">
-                <input class="opt_quiz" onclick="setTimeout(certo5, 1500);" type="button" value="Capa da Invisibilidade, Varinha das varinhas e
+                <input class="opt_quiz3" onclick="certo5();" type="button" value="Capa da Invisibilidade, Varinha das varinhas e
                    Pedra da Ressureição">
-                <input class="opt_quiz" onclick="setTimeout(errado5, 1500);" type="button"
+                <input class="opt_quiz4" onclick="errado5();" type="button"
                   value="Taça Tribruxo, Pomo de Ouro e Varinha das varinhas">
               </div>
             </div>
@@ -151,10 +151,10 @@
             <div id="pergunta06" style="display: none;" class="perguntas_quiz">
               <span class="perg_quiz">Quanto Galeões ganha o vencedor do Torneio Tribuxo?</span>
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(errado6, 1500);" type="button" value="1200">
-                <input class="opt_quiz" onclick="setTimeout(errado6, 1500);" type="button" value="1500">
-                <input class="opt_quiz" onclick="setTimeout(certo6, 1500);" type="button" value="1000">
-                <input class="opt_quiz" onclick="setTimeout(errado6, 1500);" type="button" value="900">
+                <input class="opt_quiz1" onclick="errado6();" type="button" value="1200">
+                <input class="opt_quiz2" onclick="errado6();" type="button" value="1500">
+                <input class="opt_quiz3" onclick="certo6();" type="button" value="1000">
+                <input class="opt_quiz4" onclick="errado6();" type="button" value="900">
               </div>
             </div>
 
@@ -162,30 +162,30 @@
               <span class="perg_quiz">Qual nome do artefato que a professora Minerva deu a Herminone no filme
                 Prisioneiro de Azkaban?</span>
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(errado7, 1500);" type="button" value="Avança-Tempo">
-                <input class="opt_quiz" onclick="setTimeout(errado7, 1500);" type="button" value="Para-Tempo">
-                <input class="opt_quiz" onclick="setTimeout(certo7, 1500);" type="button" value="Vira-Tempo">
-                <input class="opt_quiz" onclick="setTimeout(errado7, 1500);" type="button" value="Volta-Tempo">
+                <input class="opt_quiz1" onclick="errado7();" type="button" value="Avança-Tempo">
+                <input class="opt_quiz2" onclick="errado7();" type="button" value="Para-Tempo">
+                <input class="opt_quiz3" onclick="certo7();" type="button" value="Vira-Tempo">
+                <input class="opt_quiz4" onclick="errado7();" type="button" value="Volta-Tempo">
               </div>
             </div>
 
             <div id="pergunta08" style="display: none;" class="perguntas_quiz">
               <span class="perg_quiz">Quem é o "Príncipe Mestiço"?</span>
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(errado8, 1500);" type="button" value="Tom Riddle">
-                <input class="opt_quiz" onclick="setTimeout(errado8, 1500);" type="button" value="Draco Malfoy">
-                <input class="opt_quiz" onclick="setTimeout(errado8, 1500);" type="button" value="Rúbeo Hagrid">
-                <input class="opt_quiz" onclick="setTimeout(certo8, 1500);" type="button" value="Severo Snape">
+                <input class="opt_quiz1" onclick="errado8();" type="button" value="Tom Riddle">
+                <input class="opt_quiz2" onclick="errado8();" type="button" value="Draco Malfoy">
+                <input class="opt_quiz3" onclick="errado8();" type="button" value="Rúbeo Hagrid">
+                <input class="opt_quiz4" onclick="certo8();" type="button" value="Severo Snape">
               </div>
             </div>
 
             <div id="pergunta09" style="display: none;" class="perguntas_quiz">
               <span class="perg_quiz">Qual o nome da coruja do Harry?</span>
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(certo9, 1500);" type="button" value="Edwiges">
-                <input class="opt_quiz" onclick="setTimeout(errado9, 1500);" type="button" value="Eduardo">
-                <input class="opt_quiz" onclick="setTimeout(errado9, 1500);" type="button" value="Dobby">
-                <input class="opt_quiz" onclick="setTimeout(errado9, 1500);" type="button" value="Edward">
+                <input class="opt_quiz1" onclick="certo9();" type="button" value="Edwiges">
+                <input class="opt_quiz2" onclick="errado9();" type="button" value="Eduardo">
+                <input class="opt_quiz3" onclick="errado9();" type="button" value="Dobby">
+                <input class="opt_quiz4" onclick="errado9();" type="button" value="Edward">
               </div>
             </div>
 
@@ -193,40 +193,40 @@
             <div id="pergunta10" style="display: none;" class="perguntas_quiz">
               <span class="perg_quiz">Qual o patrono de Luna Lovegood?</span>
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(errado10, 1500);" type="button" value="Coelho">
-                <input class="opt_quiz" onclick="setTimeout(certo10, 1500);" type="button" value="Lebre">
-                <input class="opt_quiz" onclick="setTimeout(errado10, 1500);" type="button" value="Hamster">
-                <input class="opt_quiz" onclick="setTimeout(errado10, 1500);" type="button" value="Veado">
+                <input class="opt_quiz1" onclick="errado10();" type="button" value="Coelho">
+                <input class="opt_quiz2" onclick="certo10();" type="button" value="Lebre">
+                <input class="opt_quiz3" onclick="errado10();" type="button" value="Hamster">
+                <input class="opt_quiz4" onclick="errado10();" type="button" value="Veado">
               </div>
             </div>
 
             <div id="pergunta11" style="display: none;" class="perguntas_quiz">
               <span class="perg_quiz">Qual o nome da serpente de Voldemort?</span>
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(errado11, 1500);" type="button" value="Batilda">
-                <input class="opt_quiz" onclick="setTimeout(errado11, 1500);" type="button" value="Najila">
-                <input class="opt_quiz" onclick="setTimeout(errado11, 1500);" type="button" value="Naja">
-                <input class="opt_quiz" onclick="setTimeout(certo11, 1500);" type="button" value="Nagini">
+                <input class="opt_quiz1" onclick="errado11();" type="button" value="Batilda">
+                <input class="opt_quiz2" onclick="errado11();" type="button" value="Najila">
+                <input class="opt_quiz3" onclick="errado11();" type="button" value="Naja">
+                <input class="opt_quiz4" onclick="certo11();" type="button" value="Nagini">
               </div>
             </div>
 
             <div id="pergunta12" style="display: none;" class="perguntas_quiz">
               <span class="perg_quiz">Qual o nome da escola de magia francesa?</span>
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(errado12, 1500);" type="button" value="Durmstrang">
-                <input class="opt_quiz" onclick="setTimeout(certo12, 1500);" type="button" value="Beauxbatons">
-                <input class="opt_quiz" onclick="setTimeout(errado12, 1500);" type="button" value="Hogwarts">
-                <input class="opt_quiz" onclick="setTimeout(errado12, 1500);" type="button" value="Castelo Bruxo">
+                <input class="opt_quiz1" onclick="errado12();" type="button" value="Durmstrang">
+                <input class="opt_quiz2" onclick="certo12();" type="button" value="Beauxbatons">
+                <input class="opt_quiz3" onclick="errado12();" type="button" value="Hogwarts">
+                <input class="opt_quiz4" onclick="errado12();" type="button" value="Castelo Bruxo">
               </div>
             </div>
 
             <div id="pergunta13" style="display: none;" class="perguntas_quiz">
               <span class="perg_quiz">Qual nome completo do Voldemort?</span>
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(certo13, 1500);" type="button" value="Tom Marvolo Riddle">
-                <input class="opt_quiz" onclick="setTimeout(errado13, 1500);" type="button" value="Tom Riddle">
-                <input class="opt_quiz" onclick="setTimeout(errado13, 1500);" type="button" value="Tom Marvolo">
-                <input class="opt_quiz" onclick="setTimeout(errado13, 1500);" type="button"
+                <input class="opt_quiz1" onclick="certo13();" type="button" value="Tom Marvolo Riddle">
+                <input class="opt_quiz2" onclick="errado13();" type="button" value="Tom Riddle">
+                <input class="opt_quiz3" onclick="errado13();" type="button" value="Tom Marvolo">
+                <input class="opt_quiz4" onclick="errado13();" type="button"
                   value="Tom Marvolo Voldemort">
               </div>
             </div>
@@ -234,20 +234,20 @@
             <div id="pergunta14" style="display: none;" class="perguntas_quiz">
               <span class="perg_quiz">Em qual animal a professora Minerva se transfigurava?</span>
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(errado14, 1500);" type="button" value="Cachorro">
-                <input class="opt_quiz" onclick="setTimeout(errado14, 1500);" type="button" value="Fênix">
-                <input class="opt_quiz" onclick="setTimeout(errado14, 1500);" type="button" value="Coelho">
-                <input class="opt_quiz" onclick="setTimeout(certo14, 1500);" type="button" value="Gato">
+                <input class="opt_quiz1" onclick="errado14();" type="button" value="Cachorro">
+                <input class="opt_quiz2" onclick="errado14();" type="button" value="Fênix">
+                <input class="opt_quiz3" onclick="errado14();" type="button" value="Coelho">
+                <input class="opt_quiz4" onclick="certo14();" type="button" value="Gato">
               </div>
             </div>
 
             <div id="pergunta15" style="display: none;" class="perguntas_quiz">
               <span class="perg_quiz">Qual o patrono de Harry Potter?</span>
               <div class="meio">
-                <input class="opt_quiz" onclick="setTimeout(errado15, 1500);" type="button" value="Lobo">
-                <input class="opt_quiz" onclick="setTimeout(errado15, 1500);" type="button" value="Alce">
-                <input class="opt_quiz" onclick="setTimeout(certo15, 1500);" type="button" value="Cervo">
-                <input class="opt_quiz" onclick="setTimeout(errado15, 1500);" type="button" value="Rato">
+                <input class="opt_quiz1" onclick="errado15();" type="button" value="Lobo">
+                <input class="opt_quiz2" onclick="errado15();" type="button" value="Alce">
+                <input class="opt_quiz3" onclick="certo15();" type="button" value="Cervo">
+                <input class="opt_quiz4" onclick="errado15();" type="button" value="Rato">
               </div>
             </div>
 
