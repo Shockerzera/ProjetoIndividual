@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="imgs/logoHP.png">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Harry Potter - Cadastro</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+
+    <div class="fundo_login">
+        <div class="header">
+            <div class="container">
+
+                <a class="href_index" href="index.html">
+                    <div class="titulo">
+                        <img src="imgs/logoHP.png" alt="">
+                        <h1>Harry Potter</h1>
+                    </div>
+                </a>
+
+
+                <ul class="navBar">
+
+                    <ul class="register">
+                        <a href="cadastro.html">
+                            <div class="cadastro_botao">
+                                <li>Cadastro</li>
+                            </div>
+                        </a>
+
+
+                        <a href="login.html">
+                            <div class="login_botao">
+                                <li> Login</li>
+                            </div>
+                        </a>
+
+                    </ul>
+
+            </div>
+        </div>
+
+        <!-- BANNER -->
+
+        <div class="banner_cadastro">
+            <div class="container">
+
+                <div class="cadastro">
+                    <div class="cadastro_titulo">
+                        <h2 id="titulo_cad">Cadastro</h2>
+                    </div>
+
+
+                    <div id="boxes_cad" class="boxes_cadastro">
+                        <div class="box_cadastro">
+                            Usuário
+                            <div class="campo">
+                                <input id="nome_input" class="ipt" type="text" placeholder="Nome Sobrenome">
+                                <span class="msg_erro"></span>
+                            </div>
+                            Email
+                            <div class="campo">
+                                <input id="email_input" class="ipt" type="text" placeholder="exemplo@gmail.com">
+                                <span id="erroEmail" class="msg_erro"></span>
+                            </div>
+                        </div>
+
+                        <div class="linha"></div>
+
+                        <div class="box_cadastro">
+                            Senha
+                            <div class="campo">
+                                <input id="senha_input" class="ipt" type="password" placeholder="**********">
+                                <span></span>
+                            </div>
+                            Confirmar Senha
+                            <div class="campo">
+                                <input id="confirmacao_senha_input" class="ipt" type="password"
+                                    placeholder="**********">
+                                <span id="erroSenha" class="msg_erro"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <span id="mensagem_erro" class="msg_erro"></span>
+
+
+                    <div id="btn_proximo" class="fim_cadastro">
+                        <button onclick="proximo()" class="btn_cadastro">Próximo</button>
+                    </div>
+
+
+                    <div id="casas" style="display: none;">
+                        <div class="fotos_cad">
+                            <div id="foto_grif" class="div_fotos"> <img onclick="grifindor()" src="imgs/grifinoria.png"
+                                    alt="">
+                                <span>
+                                    Grifinoria
+                                </span>
+                            </div>
+                            <div id="foto_son" class="div_fotos"> <img onclick="slyther()" src="imgs/sonserina.png"
+                                    alt="">
+                                <span>
+                                    Sonserina
+                                </span>
+                            </div>
+                            <div id="foto_luf" class="div_fotos"> <img onclick="huffle()" src="imgs/lufa.png" alt="">
+                                <span>
+                                    Lufa-Lufa
+                                </span>
+                            </div>
+                            <div id="foto_cor" class="div_fotos"> <img onclick="corvinal()" src="imgs/corvinal.png"
+                                    alt="">
+                                <span>
+                                    Corvinal
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="btn_cadastrar" class="fim_cadastro" style="display: none">
+                        <button onclick="cadastrar()" class="btn_cadastro">Cadastrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var Grifinoria = "Grifinória"
+    var Sonserina = "Sonserina"
+    var LufaLufa = "Lufa-Lufa"
+    var Corvinal = "Corvinal"
+    var escolha = 0;
+
+
+    function proximo() {
+        if (nome_input.value == '' || email_input.value == '' || senha_input.value == '') {
+            mensagem_erro.innerHTML = 'Preencha todos os campos!';
+            return false;
+        }
+
+        if (email_input.value.indexOf("@") == -1 || email_input.value.startsWith("@") == true || email_input.value
+            .endsWith("@") == true || (
+                email_input.value.endsWith(".com") == false && email_input.value.endsWith(".school") == false &&
+                email_input.value.endsWith(
+                    ".com.br") == false)) {
+            erroEmail.innerHTML += 'Ops, e-mail inválido!';
+            return false;
+        }
+
+        if (senha_input.value != confirmacao_senha_input.value) {
+            erroSenha.innerHTML += 'As senhas inseridas devem ser iguais para prosseguir!';
+            return false;
+
+        }
+
+        boxes_cad.style.display = "none";
+        btn_cadastrar.style.display = "block";
+        btn_proximo.style.display = "none";
+        mensagem_erro.innerHTML = '';
+        casas.style.display = "block";
+        titulo_cad.innerHTML = 'Escolha sua casa!';
+    }
+
+    function grifindor() {
+        foto_son.style.opacity = "0.5";
+        foto_luf.style.opacity = "0.5";
+        foto_cor.style.opacity = "0.5";
+        foto_grif.style.opacity = "1";
+        escolha = 1
+    }
+
+    function slyther() {
+        foto_grif.style.opacity = "0.5";
+        foto_luf.style.opacity = "0.5";
+        foto_cor.style.opacity = "0.5";
+        foto_son.style.opacity = "1";
+        escolha = 2
+    }
+
+    function huffle() {
+        foto_son.style.opacity = "0.5";
+        foto_grif.style.opacity = "0.5";
+        foto_cor.style.opacity = "0.5";
+        foto_luf.style.opacity = "1";
+        escolha = 3
+    }
+
+    function corvinal() {
+        foto_son.style.opacity = "0.5";
+        foto_luf.style.opacity = "0.5";
+        foto_grif.style.opacity = "0.5";
+        foto_cor.style.opacity = "1";
+        escolha = 4
+    }
+
+    function cadastrar() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var casaVar = escolha;
+
+        mensagem_erro.innerHTML = '';
+        erroEmail.innerHTML = '';
+        erroSenha.innerHTML = '';
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            mensagem_erro.innerHTML += 'Preencha todos os campos!';
+            return false;
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.startsWith("@") == true || emailVar.endsWith("@") == true || (
+                emailVar.endsWith(".com") == false && emailVar.endsWith(".school") == false && emailVar.endsWith(
+                    ".com.br") == false)) {
+            erroEmail.innerHTML += 'Ops, e-mail inválido!';
+            return false;
+        }
+
+        if (senhaVar != confirmacaoSenhaVar) {
+            erroSenha.innerHTML += 'As senhas inseridas devem ser iguais para prosseguir!';
+            return false;
+
+        }
+
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                casaServer: casaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                Swal.fire({
+                    title: "Usuário cadastrado com sucesso!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "login.html";
+                    }
+                });
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        });
+
+        return false;
+    }
+</script>

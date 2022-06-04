@@ -1,0 +1,515 @@
+body {
+    margin: 0;
+    background: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    width: 80vw;
+    margin: auto;
+    display: flex;
+
+}
+
+
+/* HEADER - COMEÇO */
+
+.fundo {
+    background-image: url(../imgs/AgoraVai.jpg);
+    background-repeat: no-repeat;
+    height: 80vh;
+    background-size: cover;
+}
+
+/* HEADER */
+
+.header {
+    color: white;
+    display: flex;
+}
+
+.header .container {
+    justify-content: space-between;
+}
+
+@font-face {
+    font-family: 'HarryP';
+    src: url('HARRYP_.TTF') format('truetype');
+}
+
+.titulo {
+    color: #EEBA30;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: HarryP;
+    font-size: x-large;
+}
+
+
+.titulo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    margin-right: 12px;
+}
+
+.navBar {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 350px;
+}
+
+.register {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 260px;
+}
+
+.cadastro_botao {
+    background-color: rgb(165, 165, 165);
+    color: black;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    width: 98px;
+    padding: 10px;
+    border-radius: 24px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cadastro_botao:hover {
+    background-color: rgb(165, 165, 165);
+    cursor: pointer;
+}
+
+.cadastro_botao a {
+    color: #000;
+}
+
+.login_botao {
+    background-color: #ae0001;
+    color: white;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    width: 84px;
+    padding: 10px;
+    border-radius: 24px;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login_botao:hover {
+    background-color: #c50e0e;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* HEADER - FIM */
+
+/* LOGIN - COMEÇO */
+
+.fundo_login {
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(105, 105, 105);
+    height: 100vh;
+    width: 100vw;
+}
+
+.login{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 24px;
+    width: 400px;
+    height: 500px;
+    justify-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+
+}
+
+.box_login {
+    height: 350px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.ipt {
+    display: flex;
+    border-radius: 24px;
+    font-size: 14px;
+    text-align: center;
+    height: 40px;
+    width: 320px;
+}
+
+.login a {
+    text-decoration: underline;
+    color: #000;
+}
+
+#mensagem_erro {
+    color:#E3101F;
+    font-size: small;
+}
+
+.banner_login .login .btn_acessar{
+    padding: 10px;
+    padding-right: 18px;
+    padding-left: 18px;
+    border-radius: 24px;
+    font-size: 20px;
+    margin-top: 30px;
+    border: none;
+}
+
+.banner_login .login .btn_acessar:hover {
+    background-color: #ae0001;
+    color: white;
+    cursor: pointer;
+}
+
+/* LOGIN - FIM */
+
+/* CADASTRO - COMEÇO*/
+
+.banner_cadastro .cadastro{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 24px;
+    width: 1000px;
+    height: 80%;
+    padding: 12px 12px 24px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    margin-top: 25px
+}
+
+.banner_cadastro .container{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.boxes_cadastro{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 350px;
+    width: 100%;
+    flex-direction: row;
+    padding-bottom: 24px;
+}
+
+.boxes_cadastro .linha{
+    height: 100%;
+    width: 2px;
+    background-color: rgb(105, 105, 105);
+}
+
+.box_cadastro{
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+
+.msg_erro {
+    text-align: center;
+
+    color:#E3101F;
+    font-size: small;
+    font-weight: lighter;
+    width: 100%;
+}
+
+.cadastro_titulo{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.fim_cadastro{
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_cadastro{
+    border-radius: 24px;
+    height: 40px;
+    width: 300px;
+    font-size: 20px;
+    margin-top: 30px;
+    border: none;
+    justify-items: center;
+}
+
+.btn_cadastro:hover {
+    background-color: #E3101F;
+    color: white;
+    cursor: pointer;
+}
+
+.banner h1 {
+    color: white;
+    font-size: 56px;
+    width: 48%;
+    /* text-shadow: 1px 1px black;  */
+}
+
+/* CADASTRO - FIM */
+
+/* BANNER - COMEÇO */
+
+.banner_login .container {
+    justify-content: center;
+    display: flex;
+    float: center;
+}
+
+/* BANNER - FIM */
+
+
+/* CADASTRO - COMEÇO*/
+
+.btn_cadastro {
+    border-radius: 24px;
+    height: 40px;
+    width: 300px;
+    font-size: 20px;
+    margin-top: 30px;
+    border: none;
+    justify-items: center;
+}
+
+.btn_cadastro:hover {
+    background-color: #ae0001;
+    color: white;
+    cursor: pointer;
+}
+
+.banner h1 {
+    color: white;
+    font-size: 56px;
+    width: 48%;
+}
+
+.fotos_cad{
+    display: flex;
+}
+
+.div_fotos{
+    align-items: space-around;
+    text-align: center;
+}
+
+.div_fotos img {
+    height: 245px;
+    width: 245px;
+}
+
+.div_fotos span {
+    font-family: HarryP;
+    font-size: 45px;
+}
+
+/* CADASTRO - FIM */
+
+/* SOCIAL - COMEÇO */
+
+.social {
+    background-color: white;
+    font-size: x-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.social .container h3 {
+    font-weight: lighter;
+}
+
+.parte1 {
+    display: flex;
+    width: 100%;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    background-color: #696969;
+    background-image: linear-gradient(rgb(22, 22, 22), #696969);
+}
+
+.parte1 .container {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.parte2 {
+    padding-top: 72px;
+    padding-bottom: 72px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient( #696969, black);
+}
+
+.parte2 .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.parte3 {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 72px;
+    padding-bottom: 72px;
+    background-image: linear-gradient(black, #696969);
+}
+
+.parte3 .container {
+    justify-content: space-between;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 33%;
+    color: rgb(223, 223, 223);
+}
+
+.box2 {
+    display: flex;
+    align-items: center;
+}
+
+#Marca {
+    height: 450px;
+    border-radius: 25px;
+}
+
+#campHP {
+    width: 750px;
+    border-radius: 25px;
+}
+
+#taca {
+    width: 650px;
+    height: 350px;
+    border-radius: 25px;
+}
+
+
+.cadastro_botao:hover {
+    animation: pulsate_cad 0.75s ease-in-out;
+}
+
+@keyframes pulsate_cad {
+    0% {
+        box-shadow: 0 0 15px rgb(165, 165, 165),
+            0 0 15px rgb(165, 165, 165);
+    }
+}
+
+.login_botao:hover {
+    animation: pulsate_log 0.75s ease-in-out;
+}
+
+@keyframes pulsate_log {
+    0% {
+        box-shadow: 0 0 15px #ae0001,
+            0 0 15px #ae0001;
+    }
+}
+
+/* SOCIAL - FIM */
+
+/* FOOTER - COMEÇO */
+
+.footer {
+    background-image: linear-gradient( #696969, black);
+    width: 100%;
+    color: white;
+    padding-top: 72px;
+    padding-bottom: 72px;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.divisao {
+    width: 80%;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 24px;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.boxes_footer2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* FOOTER - FIM */
+
+/* SCROLL BAR  */
+
+::-webkit-scrollbar-track {
+    background-color: whitesmoke;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(50, 50, 50);
+}
+/* FINAL SCROLL BAR */
