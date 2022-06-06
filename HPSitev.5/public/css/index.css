@@ -17,10 +17,12 @@ body {
 /* HEADER - COMEÇO */
 
 .fundo {
-    background-image: url(../imgs/AgoraVai.jpg);
+    background-image: url(../imgs/25a2bf5200e0bfae42e4714d792445d0.jpg);
     background-repeat: no-repeat;
     height: 80vh;
     background-size: cover;
+    background-position: center;
+    padding-bottom: 5vh;
 }
 
 /* HEADER */
